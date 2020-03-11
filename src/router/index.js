@@ -5,6 +5,7 @@ import About from "../views/About.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import StudentsEdit from "../views/StudentsEdit.vue";
+import EducationsEdit from "../views/EducationsEdit.vue";
 
 
 
@@ -35,8 +36,12 @@ const routes = [
     path: "/students/:id/edit", 
     name: "students-edit", 
     component: StudentsEdit 
+  },
+  { 
+    path: "/educations/:id/edit", 
+    name: "educations-edit", 
+    component: EducationsEdit 
   }
-
 ];
 
 const router = new VueRouter({
