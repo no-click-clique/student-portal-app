@@ -5,7 +5,7 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/login">Login</router-link> |
       <router-link to="/logout">Logout</router-link> |
-      <router-link to="/students/:id/edit">Update Student Info</router-link> |
+      <router-link to="/students/1/edit">Update Student Info</router-link> |
 
     </div>
     <router-view/>
