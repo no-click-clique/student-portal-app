@@ -12,7 +12,6 @@
       <router-link to="/students/1">Profile</router-link>
       |
       <router-link to="/students/1/edit">Update Student Info</router-link>
-      |
     </div>
     <router-view />
   </div>
@@ -53,4 +52,3 @@ export default {
   color: #42b983;
 }*/
 </style>
-
