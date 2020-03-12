@@ -18,11 +18,11 @@
         </div>
         <div class="form-group">
           <label>Degree:</label>
-          <input type="email" class="form-control" v-model="education.degree">
+          <input type="text" class="form-control" v-model="education.degree">
         </div>
         <div class="form-group">
           <label>University</label>
-          <input type="text" class="form-control" v-model="education.university">
+          <input type="text" class="form-control" v-model="education.university_name">
         </div>
         <div class="form-group">
           <label>Details</label>
@@ -46,11 +46,12 @@ export default {
     return {
       message: "Update Education Info!",
       education: {},
-      errors: []
+      errors: [],
+      student_id: localStorage.getItem("student_id")
     };
   },
   created: function() {
-    axios.get(`/api/educations/${this.route.params.id}`).then(response => {
+    axios.get(`/api/educations/${this.$route.params.id}`).then(response => {
       console.log(response.data);
       this.education = response.data;
     });
@@ -60,14 +61,14 @@ export default {
       var params = {
         start_date: this.education.start_date,
         end_date: this.education.end_date,
-        job_title: this.education.job_title,
-        company: this.education.company,
+        degree: this.education.degree,
+        university_name: this.education.university_name,
         details: this.education.details,
       };
       axios
         .patch(`/api/educations/${this.education.id}`, params)
         .then(response => {
-          this.$router.push(`/educations/${this.education.id}`);
+          this.$router.push(`/students/${this.student_id}`);
         })
         .catch(error => {
           console.log(error.response);

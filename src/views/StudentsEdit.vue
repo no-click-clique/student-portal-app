@@ -62,11 +62,12 @@ export default {
     return {
       message: "Update Student Info!",
       student: {},
-      errors: []
+      errors: [],
+      student_id: localStorage.getItem("student_id")
     };
   },
   created: function() {
-    axios.get("/api/students/1").then(response => {
+    axios.get(`/api/educations/${this.$route.params.id}`).then(response => {
       console.log(response.data);
       this.student = response.data;
     });
