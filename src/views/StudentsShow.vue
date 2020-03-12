@@ -27,6 +27,7 @@
       <p>Job Title: {{ experience.job_title }}</p>
       <p>Company: {{ experience.company_name }}</p>
       <p>Details: {{ experience.details }}</p>
+      <router-link :to="`/experiences/${experience.id}/edit`">Edit</router-link>
     </div>
     <div v-for="capstone in student.capstones">
       <h1>Capstone</h1>
@@ -34,10 +35,12 @@
       <p>description: {{ capstone.description }}</p>
       <p>Url: {{ capstone.url }}</p>
       <p>Screenshot: {{ capstone.screenshot }}</p>
+      <router-link :to="`/capstones/${capstone.id}/edit`">Edit</router-link>
     </div>
     <div v-for="skill in student.skills">
       <h1>Skill</h1>
       <p>Name: {{ skill.name }}</p>
+      <router-link :to="`/skills/${skill.id}/edit`">Edit</router-link>
     </div>
   </div>
 </template>
