@@ -6,7 +6,7 @@
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
-        {{ education }}
+        
 
         <div class="form-group">
           <label>Start Date:</label>
