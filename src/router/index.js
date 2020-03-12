@@ -7,6 +7,7 @@ import Logout from "../views/Logout.vue";
 import StudentsShow from "../views/StudentsShow.vue";
 import StudentsEdit from "../views/StudentsEdit.vue";
 import EducationsEdit from "../views/EducationsEdit.vue";
+import ExperiencesEdit from "../views/ExperiencesEdit.vue";
 
 Vue.use(VueRouter);
 
@@ -47,6 +48,11 @@ const routes = [
     path: "/educations/:id/edit",
     name: "educations-edit",
     component: EducationsEdit
+  },
+  {
+    path: "/experiences/:id/edit",
+    name: "experiences-edit",
+    component: ExperiencesEdit
   }
 ];
 
