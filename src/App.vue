@@ -9,9 +9,9 @@
       |
       <router-link v-if="isLoggedIn()" class="nav-item" to="/logout">Logout</router-link>
       |
-      <router-link to="/students/1">Profile</router-link>
+      <router-link :to="`/students/${getUserId()}`">Profile</router-link>
       |
-      <router-link to="/students/1/edit">Update Student Info</router-link>
+      <router-link :to="`/students/${getUserId()}/edit`">Update Student Info</router-link>
     </div>
     <router-view />
   </div>
@@ -26,6 +26,9 @@ export default {
       } else {
         return false;
       }
+    },
+    getUserId: function() {
+      return localStorage.getItem("student_id");
     }
   }
 };

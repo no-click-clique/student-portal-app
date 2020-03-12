@@ -2,42 +2,40 @@
   <div class="educations-edit">
     <div class="container">
       <form v-on:submit.prevent="submit()">
-       <h1>{{ message }}</h1>
+        <h1>{{ message }}</h1>
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
         {{ education }}
-        
+
         <div class="form-group">
           <label>Start Date:</label>
-          <input type="text" class="form-control" v-model="education.start_date">
+          <input type="text" class="form-control" v-model="education.start_date" />
         </div>
         <div class="form-group">
           <label>End Date:</label>
-          <input type="text" class="form-control" v-model="education.end_date">
+          <input type="text" class="form-control" v-model="education.end_date" />
         </div>
         <div class="form-group">
           <label>Degree:</label>
-          <input type="text" class="form-control" v-model="education.degree">
+          <input type="text" class="form-control" v-model="education.degree" />
         </div>
         <div class="form-group">
           <label>University</label>
-          <input type="text" class="form-control" v-model="education.university_name">
+          <input type="text" class="form-control" v-model="education.university_name" />
         </div>
         <div class="form-group">
           <label>Details</label>
-          <input type="text" class="form-control" v-model="education.details">
+          <input type="text" class="form-control" v-model="education.details" />
         </div>
-        
-        <input type="submit" class="btn btn-primary" value="Submit">
+
+        <input type="submit" class="btn btn-primary" value="Submit" />
       </form>
     </div>
-    
   </div>
 </template>
 
-<style>
-</style>
+<style></style>
 
 <script>
 import axios from "axios";
@@ -63,7 +61,7 @@ export default {
         end_date: this.education.end_date,
         degree: this.education.degree,
         university_name: this.education.university_name,
-        details: this.education.details,
+        details: this.education.details
       };
       axios
         .patch(`/api/educations/${this.education.id}`, params)
@@ -74,7 +72,7 @@ export default {
           console.log(error.response);
           this.errors = error.response.data.errors;
         });
-    },
+    }
   }
 };
 </script>
